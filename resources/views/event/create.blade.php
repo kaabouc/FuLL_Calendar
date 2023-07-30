@@ -29,6 +29,14 @@
                         <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
                     </div>
                     <div class="form-group mb-2">
+                    <label for="categorie">Catégorie:</label>
+                    <select name="categorie_id" required>
+                        @foreach ($categories as $categorie)
+                            <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                        @endforeach
+                    </select>
+                     </div>
+                    <div class="form-group mb-2">
                         <label for="description" class="control-label">role(pour toi)</label>
                         yess
                         <input type="checkbox" name="role" id="role" value="1" >  non <input type="checkbox" name="role" id="role" value="0" >

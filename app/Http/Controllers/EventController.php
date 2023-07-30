@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categorie;
 use App\Models\event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +32,9 @@ class EventController extends Controller
     public function create()
     {
         // return view('cour.create');
-     
-        return view('event.create');    
+        $categories = categorie::all();
+
+        return view('event.create', compact('categories'));    
     }
 
     /**
@@ -50,6 +52,7 @@ class EventController extends Controller
         $event->description_event = $request->input('description_event');
         $event->start_datetime = $request->input('start_datetime');
         $event->end_datetime = $request->input('end_datetime');
+        $event->categorie_id = $request->input('categorie_id');
         $event->role = $request->input('role');
         
         $event->save();

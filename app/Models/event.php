@@ -19,4 +19,7 @@ class event extends Model
     public function categorie(){ 
         return $this->belongsTo('App\Models\categorie');
     }
+    public function user(){ 
+        return $this->belongsTo('App\Models\User');
+    }
 }

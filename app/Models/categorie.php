@@ -18,5 +18,6 @@ class categorie extends Model
     public function event(){ 
         return $this->hasMany('App\Models\event');
     }
-    
+
+
 }

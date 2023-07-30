@@ -1,25 +1,4 @@
 @extends('layouts.admin')
-<style>
-    :root {
-        --bs-success-rgb: 71, 222, 152 !important;
-    }
-
-    html,
-    body {
-        height: 100%;
-        width: 100%;
-        font-family: Apple Chancery, cursive;
-    }
-
-    .btn-info.text-light:hover,
-    .btn-info.text-light:focus {
-        background: #000;
-    }
-    table, tbody, td, tfoot, th, thead, tr {
-        border-color: #ededed !important;
-        border-style: solid;
-        border-width: 1px !important;
-    }
 </style>
 @section('content')
 <div class="col-md-9">
@@ -53,6 +32,14 @@
                         <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
                     </div>
                     <div class="form-group mb-2">
+                        <label for="categorie">Catégorie:</label>
+                        <select name="categorie_id" required>
+                            @foreach ($categories as $categorie)
+                                <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                            @endforeach
+                        </select>
+                         </div>
+                    <div class="form-group mb-2">
                         <label for="description" class="control-label">role(pour toi)</label>
                         yess
                         <input type="checkbox" name="role" id="role" value="1" >  non <input type="checkbox" name="role" id="role" value="0" >
@@ -72,6 +59,35 @@
 
 
 ?>
-<link rel="stylesheet" href="fullcalendar/lib/main.min.css">
-<script src="fullcalendar/lib/main.min.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'dayGrid', 'interaction' ],
+            events: [
+                @foreach ($events as $event)
+                    {
+                        title: '{{ $event->title }}',
+                        start: '{{ $event->start_datetime }}',
+                        end: '{{ $event->end_datetime }}',
+                        // Ajoutez d'autres propriétés des événements si nécessaire
+                    },
+                @endforeach
+            ],
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,dayGridWeek,dayGridDay'
+            },
+            // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
+        });
+
+        calendar.render();
+    });
+</script>
+
 @endsection
+

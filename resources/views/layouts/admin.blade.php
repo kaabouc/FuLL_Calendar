@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GINFR</title>
   <link rel="icon"  href="../../image/route1.png">
+  
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -30,6 +31,9 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="../../bootstrap.min.css">
   <link href="{{ asset('dist/css/adminlte.min.css') }}"rel="stylesheet">
+  <link href="https://unpkg.com/@fullcalendar/core/main.css" rel="stylesheet">
+<link href="https://unpkg.com/@fullcalendar/daygrid/main.css" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -168,7 +172,7 @@
       <!-- /.control-sidebar -->
     </div>
 
-</body>
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -200,4 +204,13 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<link rel="stylesheet" href="fullcalendar/lib/main.min.css ">
+
+<script src="https://unpkg.com/@fullcalendar/core/main.js"></script>
+<script src="https://unpkg.com/@fullcalendar/daygrid/main.js"></script>
+<script src="https://unpkg.com/@fullcalendar/interaction/main.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+
+</body>
 </html>
