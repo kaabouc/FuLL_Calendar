@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group mb-2">
                         <label for="description" class="control-label">Description</label>
-                        <textarea rows="3" class="form-control form-control-sm rounded-0" name="description_event" id="description_event" value="{{ $event->description_event}}" required></textarea>
+                        <textarea rows="3" class="form-control form-control-sm rounded-0" name="description_event" id="description_event" value="{{ $event->description_event}}" required>{{ $event->description_event}}</textarea>
                     </div>
                    
                     <div class="form-group mb-2">
@@ -46,6 +46,14 @@
                         <label for="end_datetime" class="control-label">End</label>
                         <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime"  value="{{ $event->end_datetime}}" required>
                     </div>
+                    <div class="form-group mb-2">
+                      <label for="categorie">Catégorie:</label>
+                      <select name="categorie_id" required>
+                          @foreach ($categories as $categorie)
+                              <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                          @endforeach
+                      </select>
+                       </div>
                     <div class="form-group mb-2" >
                         <label for="description" class="control-label">role(pour toi)</label>
                         yess
@@ -55,7 +63,7 @@
             
         <div class="card-footer" >
             <div class="text-center" >
-                <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
+                <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-edit"></i> modifier</button>
                 <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
             </div>
         </div>

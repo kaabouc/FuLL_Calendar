@@ -37,7 +37,7 @@
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->description_categorie}}</td>
-            <td>{{$item->icon}}</td>
+            <td ><img style="width: 25px ; height: 26px; " src="{{ asset('storage/'.$item->icon) }}" alt="Icône"></td>
 
             <td><a href="{{ route('categorie.edit', $item->id)}}" class="btn btn-primary">Modifier</a></td>
            

@@ -16,7 +16,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = event::all();
+        $id=Auth::user()->id;
+        $event = event::where('user_id',$id)->get();
        
        // $cours = Cour::where('user_id',Auth::user()->id)->get();
       //  $cours = $filier->Cours();
@@ -85,8 +86,9 @@ class EventController extends Controller
     {
         
         $event = event::find($id);
+        $categories = categorie::all();
 
-        return view('event.edit' , compact('event'));
+        return view('event.edit' , compact('event','categories'));
     }
 
     /**

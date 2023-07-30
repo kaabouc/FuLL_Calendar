@@ -1,93 +1,57 @@
-@extends('layouts.admin')
-</style>
-@section('content')
-<div class="col-md-9">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Votre titre</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link href="https://unpkg.com/@fullcalendar/core/main.css" rel="stylesheet">
+    <link href="https://unpkg.com/@fullcalendar/daygrid/main.css" rel="stylesheet">
+</head>
+<body>
+
     <div id="calendar"></div>
-</div>
-<div class="col-md-3">
-    <div class="cardt rounded-0 shadow">
-        <div class="card-header bg-gradient bg-primary text-light">
-            <h5 class="card-title">Schedule Form</h5>
-        </div>
-        <div class="card-body">
-            <div class="container-fluid">
-                <form action="{{ route('event.store') }}" method="post" id="schedule-form"  enctype="multipart/form-data" >
-                    @csrf
-                    <input type="hidden" name="id" value="">
-                    <div class="form-group mb-2">
-                        <label for="title" class="control-label">Title</label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="description" class="control-label">Description</label>
-                        <textarea rows="3" class="form-control form-control-sm rounded-0" name="description_event" id="description_event" required></textarea>
-                    </div>
-                   
-                    <div class="form-group mb-2">
-                        <label for="start_datetime" class="control-label">Start</label>
-                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="end_datetime" class="control-label">End</label>
-                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="categorie">Catégorie:</label>
-                        <select name="categorie_id" required>
-                            @foreach ($categories as $categorie)
-                                <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
-                            @endforeach
-                        </select>
-                         </div>
-                    <div class="form-group mb-2">
-                        <label for="description" class="control-label">role(pour toi)</label>
-                        yess
-                        <input type="checkbox" name="role" id="role" value="1" >  non <input type="checkbox" name="role" id="role" value="0" >
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="card-footer">
-            <div class="text-center">
-                <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
-                <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<?php 
 
+    <script src="https://unpkg.com/@fullcalendar/core/main.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/daygrid/main.js"></script>
+    <script src="https://unpkg.com/@fullcalendar/interaction/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: [ 'dayGrid', 'interaction' ],
-            events: [
-                @foreach ($events as $event)
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid', 'interaction' ],
+                events: [
+                    // Ajoutez ici les données de vos événements depuis la base de données
+                    // Vous pouvez les récupérer via une requête AJAX ou directement dans le script si vous les avez déjà dans votre vue
                     {
-                        title: '{{ $event->title }}',
-                        start: '{{ $event->start_datetime }}',
-                        end: '{{ $event->end_datetime }}',
-                        // Ajoutez d'autres propriétés des événements si nécessaire
+                        title: 'Événement 1',
+                        start: '2023-07-30',
+                        end: '2023-07-31'
                     },
-                @endforeach
-            ],
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,dayGridWeek,dayGridDay'
-            },
-            // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
+                    {
+                        title: 'Événement 2',
+                        start: '2023-08-01',
+                        end: '2023-08-02'
+                    }
+                ],
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                },
+                // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
+            });
+
+            calendar.render();
         });
+    </script>
 
-        calendar.render();
-    });
-</script>
-
-@endsection
-
+</body>
+</html>

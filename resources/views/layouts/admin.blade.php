@@ -53,10 +53,16 @@
     
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item" >
-            <a class="nav-link"  href="" onclick="out" role="button"  >
-              <i  style="margin-right: 5px;"> Sortir </i>
+          <li class="nav-item">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
             </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
           </li>
          
           <li class="nav-item">
@@ -173,6 +179,8 @@
     </div>
 
 
+</body>
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -212,5 +220,4 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
 
-</body>
 </html>
