@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 </style>
 @section('content')
-<div class="col-md-9">
+<div class="col-md-9" >
     <div id="calendar"></div>
 </div>
 <div class="col-md-3">
@@ -61,6 +61,7 @@
 ?>
 
 
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -77,6 +78,7 @@
                     },
                 @endforeach
             ],
+            editable: true,
             header: {
                 left: 'prev,next today',
                 center: 'title',
