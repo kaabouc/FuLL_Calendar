@@ -23,6 +23,8 @@ class CreateEventsTable extends Migration
             $table->unsignedBigInteger('categorie_id')->nullable();
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
+            
+         
         });
     }
 
@@ -34,5 +36,9 @@ class CreateEventsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('events');
+        Schema::table('events', function (Blueprint $table) {
+            $table->dropForeign(['categorie_id']);
+            $table->dropColumn('categorie_id');
+        });
     }
 }

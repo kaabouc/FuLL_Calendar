@@ -123,7 +123,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/family" class="nav-link">
                 <i class="fas fa-shield-alt"></i>
                   <p>
                     family

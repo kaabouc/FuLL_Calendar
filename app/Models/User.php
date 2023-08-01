@@ -51,4 +51,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\event');
     }
     
+    public function family(){ 
+        return $this->belongsTo('App\Models\family');
+    }
+    
 }
