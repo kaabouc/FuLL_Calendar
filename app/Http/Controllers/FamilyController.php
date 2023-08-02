@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\event;
 use App\Models\family;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -101,6 +102,19 @@ class FamilyController extends Controller
         }
 
         return redirect()->route('family.show', $family->id);
+    }
+    public function userEvents($familyId, $userId)
+    {
+        // Récupérer la famille par son ID
+        $family = family::findOrFail($familyId);
+
+        // Récupérer l'utilisateur par son ID
+        $user = User::findOrFail($userId);
+
+        // Récupérer les événements associés à l'utilisateur de la famille
+        $events = event::where('user_id', $user->id)->get();
+
+        return view('famile.events', compact('family', 'user', 'events'));
     }
     /**
      * Show the form for editing the specified resource.

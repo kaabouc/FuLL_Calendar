@@ -42,14 +42,15 @@
             <td><a href="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
                 onclick="event.preventDefault(); document.getElementById('remove-user-form-{{ $item->id }}').submit();"
              >
-                 Supprimersupp</a>
+                 Supprimer </a>
             </td>
                  <form id="remove-user-form-{{ $item->id }}"
                     action="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
                     method="post"
                     style="display: none;"
                   >
-            <td><a href="{{ route('family.edit', $item->id)}}" class="btn btn-primary">voir</a></td>
+        
+            <td> <a href="{{ route('family.users.events', ['familyId' => $family->id, 'userId' => $item->id]) }}" class="btn btn-warring">Voir</a></td>
             
         </tr>
          
