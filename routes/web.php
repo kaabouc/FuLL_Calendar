@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::resource('family', FamilyController::class);
 Route::resource('event', EventController::class);
 Route::resource('categorie', CategorieController::class);
+Route::post('/family/{id}/addUser',  [App\Http\Controllers\FamilyController::class, 'addUser'])->name('family.addUser');
+Route::post('/family/{familyId}/removeUser/{userId}', [App\Http\Controllers\FamilyController::class, 'removeUser'])->name('family.removeUser');
+
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -41,7 +41,7 @@
 
             <td><a href="{{ route('family.edit', $item->id)}}" class="btn btn-primary">Modifier</a></td>
            
-            <td><a href="{{ route('family.show', $item->id)}}" class="btn btn-primary">Modifier</a></td>
+            <td><a href="{{ route('family.show', $item->id)}}" class="btn btn-primary">voir</a></td>
             
         </tr>
        

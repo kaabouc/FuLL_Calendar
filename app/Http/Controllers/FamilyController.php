@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\family;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FamilyController extends Controller
@@ -62,13 +63,45 @@ class FamilyController extends Controller
      */
     public function show($id)
     {
-        $categorie = family::findOrFail($id);
-        $cat = family::where('Name_famile', 'like', '%'.$categorie->Name_famile.'%');
+        $family = family::findOrFail($id);
+        $users = User::where('famile_id', $family->id)->get();
+        $Allusers = User::all();
         
      
-        return view('famile.detail', compact('categorie','cat')); 
+        return view('famile.detail', compact('family','users','Allusers')); 
     }
+    public function addUser(Request $request, $id)
+    {
+        $family = family::findOrFail($id);
 
+        // Valider les données du formulaire
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        // Ajouter l'utilisateur à la famille en mettant à jour son champ "family_id"
+        $user = User::findOrFail($request->user_id);
+        $user->famile_id = $family->id;
+        $user->save();
+
+        return redirect()->route('family.show', $family->id);
+    }
+    public function removeUser($familyId, $userId)
+    {
+        $family = family::findOrFail($familyId);
+
+        // Trouver l'utilisateur dans la famille par son ID
+        $user = User::findOrFail($userId);
+
+        // Vérifier si l'utilisateur appartient réellement à la famille
+        if ($user->famile_id === $family->id) {
+            // Supprimer l'association de l'utilisateur avec la famille
+            $user->famile_id = 0;
+            $user->save();
+        }
+
+        return redirect()->route('family.show', $family->id);
+    }
     /**
      * Show the form for editing the specified resource.
      *
