@@ -1,5 +1,3 @@
-<!-- index.blade.php -->
-
 @extends('layouts.admin')
 
 @section('content')
@@ -11,62 +9,65 @@
 </style>
 
 <div class="uper">
+  <div class="d-flex justify-content-between">
+    <h2>Liste des utilisateurs de la famille</h2>
+    <a href="{{ route('family.create')}}" class="btn btn-primary">Ajouter un utilisateur</a>
+  </div>
 
-  
-  <table class="table table-striped">
-
+  <table class="table table-striped mt-3">
     <thead>
-        <tr>
-          <td>ID</td>
-          <td>Name  </td>
-          <td>Telephone  </td>
-          <td>Email </td>
-          <td colspan="2">opperation</td>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Opérations</th>
+      </tr>
     </thead>
-
     <tbody>
-    
-      <a href="{{ route('family.create')}}" class="btn btn-primary">Ajouter</a> 
-    
-      
-  
-        @foreach($users as $item)
-       
-        <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->name}}</td>
-            <td>{{$item->email}}</td>
-            <td>{{$item->prenom}}</td>
-
-            <td><a href="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
-                onclick="event.preventDefault(); document.getElementById('remove-user-form-{{ $item->id }}').submit();"
-             >
-                 Supprimer </a>
-            </td>
-                 <form id="remove-user-form-{{ $item->id }}"
-                    action="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
-                    method="post"
-                    style="display: none;"
-                  >
-        
-            <td> <a href="{{ route('family.users.events', ['familyId' => $family->id, 'userId' => $item->id]) }}" class="btn btn-warring">Voir</a></td>
-            
-        </tr>
-         
-        @endforeach
+      @foreach($users as $item)
+      <tr>
+        <td>{{ $item->id }}</td>
+        <td>{{ $item->name }}</td>
+        <td>{{ $item->prenom }}</td>
+        <td>{{ $item->email }}</td>
+        <td>{{ $item->telephone }}</td>
+        <td>
+          @if($item->id !== auth()->user()->id)
+            <a href="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
+              onclick="event.preventDefault(); document.getElementById('remove-user-form-{{ $item->id }}').submit();"
+              class="btn btn-danger btn-sm">Supprimer</a>
+            <form id="remove-user-form-{{ $item->id }}"
+              action="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
+              method="post"
+              style="display: none;">
+              @csrf
+            </form>
+            <a href="{{ route('family.users.events', ['familyId' => $family->id, 'userId' => $item->id]) }}"
+              class="btn btn-warning btn-sm">Voir les événements</a>
+          @endif
+        </td>
+      </tr>
+      @endforeach
     </tbody>
   </table>
-    <form action="{{ route('family.addUser', $family->id) }}" method="post">
-        @csrf
-   
-        <label for="user_id">Sélectionner un utilisateur :</label>
-        <select name="user_id" id="user_id">
-            @foreach($Allusers as $user)
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
-            @endforeach
+
+  <div class="mt-3">
+    <h2>Ajouter un utilisateur à la famille</h2>
+    <form action="{{ route('family.addUser', $family->id) }}" method="post" class="form-inline">
+      @csrf
+      <div class="form-group">
+        <label for="user_id" class="mr-2">Sélectionner un utilisateur :</label>
+        <select name="user_id" id="user_id" class="form-control mr-2">
+          @foreach($Allusers as $user)
+          <option value="{{ $user->id }}">{{ $user->name }}</option>
+          @endforeach
         </select>
-        <button type="submit">Ajouter</button>
+      </div>
+      <button type="submit" class="btn btn-success">Ajouter</button>
     </form>
-<div>
+  </div>
+</div>
+
 @endsection

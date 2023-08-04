@@ -74,6 +74,8 @@
                         title: '{{ $event->title }}',
                         start: '{{ $event->start_datetime }}',
                         end: '{{ $event->end_datetime }}',
+                        icon:'{{ $event->categorie->icon }}',
+                    
                         // Ajoutez d'autres propriétés des événements si nécessaire
                     },
                 @endforeach
@@ -84,6 +86,17 @@
                 center: 'title',
                 right: 'dayGridMonth,dayGridWeek,dayGridDay'
             },
+            // eventRender: function(info) {
+            // var eventId = info.event.extendedProps.categorie_id;
+            // var categories = categorie.find(function(c) {
+            //     return c.id === eventId;
+            // });
+            // if (categories && categories.icon) {
+            //     var imageElement = document.createElement('img');
+            //     imageElement.src = '/storage/fichiers/' + categories.icon;
+            //     imageElement.classList.add('event-image');
+            //     info.el.querySelector('.fc-title').prepend(imageElement);
+            // }
             // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
         });
 
