@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $id=Auth::user()->id;
         $categories = categorie::all();
-        $events = event::where('user_id',$id)->get();
+        $events = event::where('user_id',$id)->with('categorie')->get();
         return view('home',compact('categories','events'));
     }
 }

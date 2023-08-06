@@ -74,35 +74,57 @@
                         title: '{{ $event->title }}',
                         start: '{{ $event->start_datetime }}',
                         end: '{{ $event->end_datetime }}',
-                        icon:'{{ $event->categorie->icon }}',
+                        icon: '{{ asset('storage/'.$event->categorie->icon)}}',
                     
                         // Ajoutez d'autres propriétés des événements si nécessaire
                     },
                 @endforeach
             ],
             editable: true,
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,dayGridWeek,dayGridDay'
-            },
-            // eventRender: function(info) {
-            // var eventId = info.event.extendedProps.categorie_id;
-            // var categories = categorie.find(function(c) {
-            //     return c.id === eventId;
-            // });
-            // if (categories && categories.icon) {
-            //     var imageElement = document.createElement('img');
-            //     imageElement.src = '/storage/fichiers/' + categories.icon;
-            //     imageElement.classList.add('event-image');
-            //     info.el.querySelector('.fc-title').prepend(imageElement);
-            // }
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                },
+                eventRender: function(info) {
+                    if (info.event.extendedProps.icon) {
+                        var iconElement = document.createElement('img');
+                        iconElement.src = info.event.extendedProps.icon;
+                        iconElement.classList.add('event-icon','miniature-icon');
+                        info.el.querySelector('.fc-title').prepend(iconElement);
+                    }
+                }
+          
+            
             // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
         });
 
         calendar.render();
     });
 </script>
+<style>
+    /* Importez le style CSS de miniature-icon ici */
+    .miniature-icon {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: spin 3s linear infinite;
+            outline: none; /* Supprimez la barre bleue de sélection */
+        }
+
+        /* Définissez l'animation "spin" */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fc .fc-content .fc-event {
+            outline: none;
+        }
+        .fc-event {
+            outline: none;
+        }
+</style>
 
 @endsection
 
