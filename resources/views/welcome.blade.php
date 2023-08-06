@@ -52,8 +52,8 @@ https://templatemo.com/tm-568-digimedia
       <div class="row">
         <div class="col-lg-8 col-sm-8 col-7">
           <ul class="info">
-            <li><a href="#"><i class="fa fa-envelope"></i>digimedia@company.com</a></li>
-            <li><a href="#"><i class="fa fa-phone"></i>010-020-0340</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>admin_page@company.com</a></li>
+            <li><a href="#"><i class="fa fa-phone"></i>060001020304</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-sm-4 col-5">
@@ -76,7 +76,7 @@ https://templatemo.com/tm-568-digimedia
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo" style="padding: 10px; color: #49045a; text-align: center; font-size: 24px; tex">
+            <a  href="#top" class="logo" style="padding: 10px; color: #49045a; text-align: center; font-size: 24px; tex">
              Full Calendar 
             </a>
             <!-- ***** Logo End ***** -->
@@ -85,7 +85,6 @@ https://templatemo.com/tm-568-digimedia
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#about">About</a></li>
               <li class="scroll-to-section"><a href="#services">Services</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Projects</a></li>
               <li class="scroll-to-section"><a href="#blog">Blog</a></li>
               <li class="scroll-to-section"><a href="#contact">Contact</a></li> 
                     @if (Route::has('login'))
@@ -119,9 +118,9 @@ https://templatemo.com/tm-568-digimedia
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h6>Digital Media Agency</h6>
+                    <h6>family calendar </h6>
                     <h2>We Boost Your Website Traffic</h2>
-                    <p>This template is brought to you by TemplateMo website. Feel free to use this for a commercial purpose. You are not allowed to redistribute the template ZIP file on any other template website. Thank you.</p>
+                    <p>TFamily Calendar est un calendrier interactif partagé conçu pour les familles. Organisez facilement vos emplois du temps, partagez des événements et restez synchronisés en un seul endroit pratique. Simplifiez la coordination familiale pour des moments inoubliables ensemble.</p>
                   </div>
                   <div class="col-lg-12">
                     <div class="border-first-button scroll-to-section">
@@ -156,10 +155,13 @@ https://templatemo.com/tm-568-digimedia
               <div class="about-right-content">
                 <div class="section-heading">
                   <h6>About Us</h6>
-                  <h4>Who is DigiMedia <em>Agency</em></h4>
+                  <h4>Who is family calendar  <em>calendar</em></h4>
                   <div class="line-dec"></div>
                 </div>
-                <p>We hope this DigiMedia template is useful for your work. You can use this template for any purpose. You may <a rel="nofollow" href="http://paypal.me/templatemo" target="_blank">contribute a little amount</a> via PayPal to <a href="https://templatemo.com/contact" target="_blank">support TemplateMo</a> in creating new templates regularly.</p>
+                <p>
+                  Notre plateforme a été conçue pour simplifier la gestion des emplois du temps et des événements pour 
+                  toute votre famille. Avec Family Calendar, coordonner les horaires de chacun, 
+                  planifier des activités en groupe et ne manquer aucun événement important devient un jeu d'enfant</p>
                 <div class="row">
                   <div class="col-lg-4 col-sm-4">
                     <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
@@ -224,192 +226,14 @@ https://templatemo.com/tm-568-digimedia
     </div>
   </div>
 
-  <div id="services" class="services section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h6>Our Services</h6>
-            <h4>What Our Agency <em>Provides</em></h4>
-            <div class="line-dec"></div>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="naccs">
-            <div class="grid">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="menu">
-                    <div class="first-thumb active">
-                      <div class="thumb">
-                        <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
-                        Apartments
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-02.png" alt=""></span>
-                        Food &amp; Life
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-03.png" alt=""></span>
-                        Cars
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-04.png" alt=""></span>
-                        Shopping
-                      </div>
-                    </div>
-                    <div class="last-thumb">
-                      <div class="thumb">                 
-                        <span class="icon"><img src="assets/images/service-icon-01.png" alt=""></span>
-                        Traveling
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col-lg-12">
-                  <ul class="nacc">
-                    <li class="active">
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>SEO Analysis &amp; Daily Reports</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
-                                  dover lipsum lorem and the others.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
-                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>Healthy Food &amp; Life</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
-                                  dover lipsum lorem and the others.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
-                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image-02.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>Car Re-search &amp; Transport</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
-                                  dover lipsum lorem and the others.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
-                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image-03.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>Online Shopping &amp; Tracking ID</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
-                                  dover lipsum lorem and the others.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
-                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image-04.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-6 align-self-center">
-                              <div class="left-text">
-                                <h4>Enjoy &amp; Travel</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
-                                  dover lipsum lorem and the others.</p>
-                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
-                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6 align-self-center">
-                              <div class="right-image">
-                                <img src="assets/images/services-image.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>          
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  
-  
-
-
-  <div id="portfolio" class="our-portfolio section">
+  <div id="services" class="our-portfolio section">
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
           <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-            <h6>Our Portofolio</h6>
-            <h4>See Our Recent <em>Projects</em></h4>
+            <h6>Our services</h6>
+            <h4>See Our Recent <em>services</em></h4>
             <div class="line-dec"></div>
           </div>
         </div>
@@ -426,8 +250,8 @@ https://templatemo.com/tm-568-digimedia
                   <img src="assets/images/portfolio-01.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <h4>Website Builder</h4>
-                  <span>Marketing</span>
+                  <h4>Gestion des événements </h4>
+                  <span>Gestion des événements </span>
                 </div>
               </div>
               </a>  
@@ -439,8 +263,8 @@ https://templatemo.com/tm-568-digimedia
                   <img src="assets/images/portfolio-01.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <h4>Website Builder</h4>
-                  <span>Marketing</span>
+                  <h4>Calendrier familial partagé</h4>
+                  <span>Calendrier familial partagé</span>
                 </div>
               </div>
               </a>  
@@ -452,8 +276,8 @@ https://templatemo.com/tm-568-digimedia
                   <img src="assets/images/portfolio-02.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <h4>Website Builder</h4>
-                  <span>Marketing</span>
+                  <h4>Gestion des membres de la famille</h4>
+                  <span>membres de familes</span>
                 </div>
               </div>
               </a>  
@@ -465,8 +289,8 @@ https://templatemo.com/tm-568-digimedia
                   <img src="assets/images/portfolio-03.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <h4>Website Builder</h4>
-                  <span>Marketing</span>
+                  <h4>Catégories d'événements personnalisées</h4>
+                  <span>Catégories d'événements personnalisées</span>
                 </div>
               </div>
               </a>  
@@ -478,8 +302,8 @@ https://templatemo.com/tm-568-digimedia
                   <img src="assets/images/portfolio-04.jpg" alt="">
                 </div>
                 <div class="down-content">
-                  <h4>Website Builder</h4>
-                  <span>Marketing</span>
+                  <h4>Interface conviviale</h4>
+                  <span>Interface conviviale</span>
                 </div>
               </div>
               </a>  
@@ -506,12 +330,11 @@ https://templatemo.com/tm-568-digimedia
               <a href="#"><img src="assets/images/footbale.jpeg" alt=""></a>
             </div>
             <div class="down-content">
-              <span class="category">SEO Analysis</span>
+              <span class="category">football</span>
               <span class="date">03 August 2021</span>
-              <a href="#"><h4>Lorem Ipsum Dolor Sit Amet, Consectetur Adelore
-                Eiusmod Tempor Incididunt</h4></a>
+              <a href="#"><h4>Le football, également appelé soccer dans certains pays, est un sport de ballon très populaire joué à l'échelle mondiale</h4></a>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers itii eiumod deis tempor incididunt ut labore.</p>
-              <span class="author"><img src="assets/images/author-post.jpg" alt="">By: Andrea Mentuzi</span>
+              <span class="author"><img src="assets/images/author-post.jpg" alt="">By: Admin de page </span>
               <div class="border-first-button"><a href="#">Discover More</a></div>
             </div>
           </div>
@@ -525,7 +348,7 @@ https://templatemo.com/tm-568-digimedia
                     <a href="#"><img src="assets/images/date food friend.jpeg" style="width: 30%; height: 50%;" alt=""></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
+                    <span class="category">food with friends</span>
                     <span class="date">24 September 2021</span>
                     <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
                     <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
@@ -538,7 +361,7 @@ https://templatemo.com/tm-568-digimedia
                     <a href="#"><img src="assets/images/R.jpeg" alt="" style="width: 30%; height: 50%;"></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
+                    <span class="category">hand ball</span>
                     <span class="date">24 September 2021</span>
                     <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
                     <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
@@ -551,7 +374,7 @@ https://templatemo.com/tm-568-digimedia
                     <a href="#"><img src="assets/images/travel date.png" alt="" style="width: 30%; height: 50%;"></a>
                   </div>
                   <div class="right-content">
-                    <span class="category">SEO Analysis</span>
+                    <span class="category">Travel </span>
                     <span class="date">24 September 2021</span>
                     <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
                     <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
@@ -595,7 +418,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/phone-icon.png" alt="">
-                          <a href="#">010-020-0340</a>
+                          <a href="#">060001020304</a>
                         </div>
                       </div>
                     </div>
@@ -603,7 +426,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/email-icon.png" alt="">
-                          <a href="#">our@email.com</a>
+                          <a href="#">Admin_page@email.com</a>
                         </div>
                       </div>
                     </div>
@@ -611,7 +434,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/location-icon.png" alt="">
-                          <a href="#">123 Rio de Janeiro</a>
+                          <a href="#">Maroc, marrakech, rue 100</a>
                         </div>
                       </div>
                     </div>

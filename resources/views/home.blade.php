@@ -110,7 +110,7 @@
             object-fit: cover;
             border-radius: 50%;
             animation: spin 3s linear infinite;
-            outline: none; /* Supprimez la barre bleue de sélection */
+         /* Supprimez la barre bleue de sélection */
         }
 
         /* Définissez l'animation "spin" */
@@ -118,12 +118,14 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .fc .fc-content .fc-event {
-            outline: none;
-        }
+        
         .fc-event {
             outline: none;
+            background-color: transparent;
+            border-color: transparent;
+            color: #000;
         }
+        
 </style>
 
 @endsection
