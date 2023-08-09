@@ -42,7 +42,7 @@ class ContactController extends Controller
         $contacte->Email = $request->input('email');
         $contacte->Message = $request->input('message');
         $contacte->save();
-        return redirect()->route('/');
+        return redirect()->back()->with('status','contact add with  Successfully');
     }
 
     /**
@@ -53,7 +53,11 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $contacte = contact::findOrFail($id);
+    
+     
+        return view('contact.detail', compact('contacte')); 
     }
 
     /**
