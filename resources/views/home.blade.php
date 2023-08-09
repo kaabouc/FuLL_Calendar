@@ -29,7 +29,11 @@
                     </div>
                     <div class="form-group mb-2">
                         <label for="end_datetime" class="control-label">End</label>
-                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
+                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime"  required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="color" class="control-label">color</label>
+                        <input type="color" class="form-control form-control-sm rounded-0" name="color" id="color"  value="blue" required>
                     </div>
                     <div class="form-group mb-2">
                         <label for="categorie">Catégorie:</label>
@@ -74,6 +78,7 @@
                         title: '{{ $event->title }}',
                         start: '{{ $event->start_datetime }}',
                         end: '{{ $event->end_datetime }}',
+                        color: '{{ $event->color }}',
                         icon: '{{ asset('storage/'.$event->categorie->icon)}}',
                     
                         // Ajoutez d'autres propriétés des événements si nécessaire
@@ -91,8 +96,13 @@
                         var iconElement = document.createElement('img');
                         iconElement.src = info.event.extendedProps.icon;
                         iconElement.classList.add('event-icon','miniature-icon');
+                        iconElement.style.backgroundColor = info.event.color;
                         info.el.querySelector('.fc-title').prepend(iconElement);
                     }
+                    
+                    
+
+
                 }
           
             
@@ -105,11 +115,11 @@
 <style>
     /* Importez le style CSS de miniature-icon ici */
     .miniature-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
             border-radius: 50%;
-            animation: spin 3s linear infinite;
+            animation: spin 5s linear infinite;
          /* Supprimez la barre bleue de sélection */
         }
 
@@ -125,7 +135,7 @@
             border-color: transparent;
             color: #000;
         }
-        
+
 </style>
 
 @endsection

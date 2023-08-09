@@ -27,6 +27,7 @@ class User extends Authenticatable
         'image_user',
         'CIN',
         'password',
+        'role',
     ];
 
     /**

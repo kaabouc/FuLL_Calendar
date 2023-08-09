@@ -15,6 +15,7 @@ class event extends Model
         'end_datetime',
         'role',
         'categorie_id',
+        'color',
         
     ];
     public function categorie(){ 

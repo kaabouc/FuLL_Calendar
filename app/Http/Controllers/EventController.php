@@ -50,6 +50,7 @@ class EventController extends Controller
         $event = new event();
         $event->user_id = Auth::user()->id;
         $event->title = $request->input('title');
+        $event->color = $request->input('color');
         $event->description_event = $request->input('description_event');
         $event->start_datetime = $request->input('start_datetime');
         $event->end_datetime = $request->input('end_datetime');
@@ -58,7 +59,7 @@ class EventController extends Controller
         
         $event->save();
 
-        return redirect()->route('event.index');
+        return  redirect()->back()->with('status','event add with Successfully');
     }
 
     /**
@@ -102,6 +103,7 @@ class EventController extends Controller
     {
         $event = event::find($id);
         $event->title = $request->input('title');
+        $event->color = $request->input('color');
         $event->description_event = $request->input('description_event');
         $event->start_datetime = $request->input('start_datetime');
         $event->end_datetime = $request->input('end_datetime');

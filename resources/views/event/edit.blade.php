@@ -47,6 +47,10 @@
                         <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime"  value="{{ $event->end_datetime}}" required>
                     </div>
                     <div class="form-group mb-2">
+                      <label for="color" class="control-label">color</label>
+                      <input type="color" class="form-control form-control-sm rounded-0" name="color" id="color"  value="{{ $event->color}}" required>
+                  </div>
+                    <div class="form-group mb-2">
                       <label for="categorie">Catégorie:</label>
                       <select name="categorie_id" required>
                           @foreach ($categories as $categorie)

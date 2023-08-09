@@ -438,6 +438,9 @@ https://templatemo.com/tm-568-digimedia
                         </div>
                       </div>
                     </div>
+                  <form action="{{ route('contact.store') }}"  enctype="multipart/form-data" method="post">
+                    @csrf
+                 
                     <div class="col-lg-6">
                       <fieldset>
                         <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
@@ -459,6 +462,7 @@ https://templatemo.com/tm-568-digimedia
                         <button type="submit" id="form-submit" class="main-button ">Send Message Now</button>
                       </fieldset>
                     </div>
+                  </form>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FamilyController;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('family', FamilyController::class);
 Route::resource('event', EventController::class);
+
 Route::resource('categorie', CategorieController::class);
 Route::post('/family/{id}/addUser',  [App\Http\Controllers\FamilyController::class, 'addUser'])->name('family.addUser');
 Route::post('/family/{familyId}/removeUser/{userId}', [App\Http\Controllers\FamilyController::class, 'removeUser'])->name('family.removeUser');
@@ -29,7 +31,7 @@ Route::get('/family/{familyId}/sendInvitation/{userId}', [App\Http\Controllers\F
 Route::post('/family/{familyId}/handleInvitation/{userId}/{status}', [App\Http\Controllers\FamilyController::class, 'handleInvitation'])->name('family.handleInvitation');
 Route::get('/family/{familyId}/invitations', [App\Http\Controllers\FamilyController::class, 'invitations'])->name('family.invitations');
 
-
+Route::resource('contact', ContactController::class);
 Route::get('/', function () {
     return view('welcome');
 });

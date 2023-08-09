@@ -49,11 +49,32 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href=""  class="nav-link">Home</a>
+            <a href="/home"  class="nav-link">Home</a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="" class="nav-link">Contact</a>
-          </li>
+          @guest
+  
+                <!-- Code pour les utilisateurs invités -->
+                    @else
+                    @if (Route::has('login') || Route::has('registre'))
+                      @php
+                        $currentUser = auth()->user();
+                      
+                      @endphp
+
+                    @if ( $currentUser && $currentUser->role == 1)
+                    
+                    <li class="nav-item d-none d-sm-inline-block">
+                      <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                    @else 
+                    <li class="nav-item" >
+                     <a class="nav-link"  href="{{ route('users.show') }}">profile</a>
+                    </li>
+                    
+                    @endif
+                @endif
+                @endguest
+          
         </ul>
     
         <!-- Right navbar links -->
@@ -84,8 +105,8 @@
       </nav>
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="../pages/index.php" class="brand-link">
-          <img src="assets\images\event_logo2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <a href="/home" class="brand-link">
+          <img src="assets\images\event_logo1.png" alt="Full Call Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">G_event</span>
         </a>
     
@@ -97,7 +118,7 @@
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="../pages/index.php" class="nav-link active">
+                <a href="/home" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                   Panneau de contrôle
