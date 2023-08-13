@@ -74,6 +74,7 @@ class RegisterController extends Controller
             'sex' => $data['sex'],
             'image_user' => $imagePath,
             'CIN' => $data['CIN'],
+            'responsable' => $data['responsable'],
             'password' => Hash::make($data['password']),
         ]);
     } 

@@ -6,6 +6,8 @@ use App\Models\event;
 use App\Models\family;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class FamilyController extends Controller
 {
@@ -16,11 +18,14 @@ class FamilyController extends Controller
      */
     public function index()
     {
-        $familes = family::all();
+        
+        $user = Auth::user();
+         
+        $familes = family::where('id',Auth::user()->famile_id)->get();
        
        // $cours = Cour::where('user_id',Auth::user()->id)->get();
       //  $cours = $filier->Cours();
-        return view('famile.index', compact('familes'));
+        return view('famile.index', compact('familes', 'user'));
     }
 
     /**
@@ -52,6 +57,11 @@ class FamilyController extends Controller
             $famile->Image_famile=$path;
         }
         $famile->save();
+        $user = Auth::user();
+
+        // Mettre à jour la colonne famile_id de l'utilisateur
+        $user->famile_id = $famile->id;
+        $user->update();
 
         return redirect()->route('family.index');
     }
@@ -113,7 +123,7 @@ class FamilyController extends Controller
         $user = User::findOrFail($userId);
 
         // Récupérer les événements associés à l'utilisateur de la famille
-        $events = event::where('user_id', $user->id)->get();
+        $events = event::where('user_id', $user->id)->where('role',0)->get();
 
         return view('famile.events', compact('family', 'user', 'events'));
     }

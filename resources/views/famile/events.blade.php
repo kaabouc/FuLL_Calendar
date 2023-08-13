@@ -41,22 +41,65 @@
                         title: '{{ $event->title }}',
                         start: '{{ $event->start_datetime }}',
                         end: '{{ $event->end_datetime }}',
+                        color: '{{ $event->color }}',
+                        icon: '{{ asset('storage/'.$event->categorie->icon)}}',
+                    
                         // Ajoutez d'autres propriétés des événements si nécessaire
                     },
                 @endforeach
             ],
             editable: true,
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,dayGridWeek,dayGridDay'
-            },
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                },
+                eventRender: function(info) {
+                    if (info.event.extendedProps.icon) {
+                        var iconElement = document.createElement('img');
+                        iconElement.src = info.event.extendedProps.icon;
+                        iconElement.classList.add('event-icon','miniature-icon');
+                        iconElement.style.backgroundColor = info.event.color;
+                        info.el.querySelector('.fc-title').prepend(iconElement);
+                    }
+                    
+                    
+
+
+                }
+          
+            
             // Ajoutez ici d'autres options de configuration du calendrier selon vos besoins
         });
 
         calendar.render();
     });
 </script>
+<style>
+    /* Importez le style CSS de miniature-icon ici */
+    .miniature-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: spin 5s linear infinite;
+         /* Supprimez la barre bleue de sélection */
+        }
+
+        /* Définissez l'animation "spin" */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fc-event {
+            outline: none;
+            background-color: transparent;
+            border-color: transparent;
+            color: #000;
+        }
+
+</style>
 
 @endsection
 

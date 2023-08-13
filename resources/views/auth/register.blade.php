@@ -107,7 +107,7 @@
                             <label for="CIN" class="col-md-4 col-form-label text-md-end">{{ __('CIN') }}</label>
 
                             <div class="col-md-6">
-                                <input id="CIN" type="CIN" class="form-control @error('CIN') is-invalid @enderror" name="CIN" value="{{ old('CIN') }}" required autocomplete="CIN">
+                                <input id="CIN" type="text" class="form-control @error('CIN') is-invalid @enderror" name="CIN" value="{{ old('CIN') }}" required autocomplete="CIN">
 
                                 @error('CIN')
                                     <span class="invalid-feedback" role="alert">
@@ -116,7 +116,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="responsable" class="col-md-4 col-form-label text-md-end">{{ __('Responsable de famile') }}</label>
 
+                            <div class="col-md-6">
+                                yess
+                              <input type="radio" name="responsable" id="responsable" value="1"  lass="form-control @error('CIN') is-invalid @enderror">  non <input type="radio" name="responsable" id="responsable" lass="form-control @error('CIN') is-invalid @enderror" value="0" >
+                                @error('responsable')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 

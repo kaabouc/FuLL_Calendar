@@ -11,7 +11,9 @@
 </style>
 
 <div class="uper">
-
+  @if ($user->responsable == 1 && $familes->isEmpty())
+     <a href="{{ route('family.create')}}" class="btn btn-primary">Ajouter famile </a> 
+     @endif
   
   <table class="table table-striped">
 
@@ -26,8 +28,8 @@
     </thead>
 
     <tbody>
-    
-      <a href="{{ route('family.create')}}" class="btn btn-primary">Ajouter</a> 
+   
+      
     
       
   
