@@ -91,7 +91,7 @@ https://templatemo.com/tm-568-digimedia
                       @auth
                       <li class="scroll-to-section"><div class="border-first-button"><a  href="{{ url('/home') }}" > home  </a></div></li> 
                     @else
-                          <li class="scroll-to-section"><div class="border-first-button"  ><a  href="{{ route('login') }}"> hi </a></div></li> 
+                          <li class="scroll-to-section"><div class="border-first-button"  ><a  href="{{ route('login') }}"> login  </a></div></li> 
                         @if (Route::has('register'))
                           <li class="scroll-to-section"><div class="border-first-button"><a  href="{{ route('register') }}"> registre  </a></div></li> 
                         @endif

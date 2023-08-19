@@ -35,8 +35,8 @@ Route::resource('contact', ContactController::class);
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::resource('user', UserController::class);
 Auth::routes();
-Route::get('/users/show', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
+Route::get('/users/show', [App\Http\Controllers\UserController::class, 'show_user'])->name('users.show');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

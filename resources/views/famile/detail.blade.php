@@ -35,9 +35,11 @@
         <td>{{ $item->telephone }}</td>
         <td>
           @if($item->id !== auth()->user()->id)
+          @if ( auth()->user()->responsable == 1 || Auth::user()->role==1)
             <a href="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
               onclick="event.preventDefault(); document.getElementById('remove-user-form-{{ $item->id }}').submit();"
               class="btn btn-danger btn-sm">Supprimer</a>
+          @endif
             <form id="remove-user-form-{{ $item->id }}"
               action="{{ route('family.removeUser', ['familyId' => $family->id, 'userId' => $item->id]) }}"
               method="post"
@@ -52,7 +54,7 @@
       @endforeach
     </tbody>
   </table>
-
+  @if ( auth()->user()->responsable == 1 || Auth::user()->role==1)
   <div class="mt-3">
     <h2>Ajouter un utilisateur à la famille</h2>
     <form action="{{ route('family.addUser', $family->id) }}" method="post" class="form-inline">
@@ -68,6 +70,7 @@
       <button type="submit" class="btn btn-success">Ajouter</button>
     </form>
   </div>
+  @endif
 </div>
 
 @endsection

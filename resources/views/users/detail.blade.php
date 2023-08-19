@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            <a href="{{ route('user.edit', $usere->id)}}" class="btn btn-primary">Modifier</a>
         </div>
     </div>
 @endsection

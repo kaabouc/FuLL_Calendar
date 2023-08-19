@@ -20,8 +20,12 @@ class FamilyController extends Controller
     {
         
         $user = Auth::user();
-         
-        $familes = family::where('id',Auth::user()->famile_id)->get();
+         if(Auth::user()->role==1){
+            $familes = family::All();
+         }else{
+            $familes = family::where('id',Auth::user()->famile_id)->get();
+         }
+        
        
        // $cours = Cour::where('user_id',Auth::user()->id)->get();
       //  $cours = $filier->Cours();
@@ -57,12 +61,15 @@ class FamilyController extends Controller
             $famile->Image_famile=$path;
         }
         $famile->save();
-        $user = Auth::user();
+        if(Auth::user()->role !=1){
+            $user = Auth::user();
 
-        // Mettre à jour la colonne famile_id de l'utilisateur
-        $user->famile_id = $famile->id;
-        $user->update();
-
+            // Mettre à jour la colonne famile_id de l'utilisateur
+            $user->famile_id = $famile->id;
+            $user->update();
+    
+        }
+       
         return redirect()->route('family.index');
     }
 
@@ -77,10 +84,13 @@ class FamilyController extends Controller
         $family = family::findOrFail($id);
         $users = User::where('famile_id', $family->id)->get();  
         $searchResults = [];
-        $Allusers = User::all();
+        $auth=Auth::user()->role;
+        $Allusers =  User::where('role', '<>', 1)
+                            ->whereNotIn('responsable', [1]) // Supposons que 1 signifie responsable
+                            ->get();
         
      
-        return view('famile.detail', compact('family','users','Allusers','searchResults')); 
+        return view('famile.detail', compact('family','users','Allusers','auth','searchResults')); 
     }
     public function addUser(Request $request, $id)
     {

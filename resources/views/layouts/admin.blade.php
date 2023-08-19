@@ -73,7 +73,7 @@
                     
                     @endif
                 @endif
-                @endguest
+            @endguest
           
         </ul>
     
@@ -115,60 +115,124 @@
         
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-                   with font-awesome or any other icon font library -->
-              <li class="nav-item">
-                <a href="/home" class="nav-link active">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>
-                  Panneau de contrôle
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/home" class="nav-link">
-                <i class="fas fa-car"></i>
-                  <p>
-                calendar
-                    <span class="right badge badge-danger">New</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/event" class="nav-link">
-                <i class="fas fa-exclamation-triangle"></i>
-                  <p>
-                event
-                    <span class="right badge badge-danger">New</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/family" class="nav-link">
-                <i class="fas fa-shield-alt"></i>
-                  <p>
-                    family
-                    <span class="right badge badge-danger">New</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/categorie" class="nav-link">
-                 <i class="fas fa-sticky-note"></i>
-                  <p>
-                    categorie
-                    <span class="right badge badge-danger">New</span>
-                  </p>
-                </a>
-              </li>
+           
+              @guest
+  
+              <!-- Code pour les utilisateurs invités -->
+                  @else
+                  @if (Route::has('login') || Route::has('registre'))
+                    @php
+                      $currentUser = auth()->user();
+                    
+                    @endphp
+
+                  @if ( $currentUser && $currentUser->role == 1)
+                  <li class="nav-item">
+                    <a href="/user" class="nav-link">
+                    <i class="fas fa-exclamation-triangle"></i>
+                      <p>
+                       users
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/event" class="nav-link">
+                    <i class="fas fa-exclamation-triangle"></i>
+                      <p>
+                    event
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/categorie" class="nav-link">
+                     <i class="fas fa-sticky-note"></i>
+                      <p>
+                        categorie
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/family" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                      <p>
+                        family
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('users.show') }}" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>information de site </p>
+                    </a>
+                  </li>
+                  @else 
+                  <li class="nav-item">
+                    <a href="/home" class="nav-link active">
+                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <p>
+                      Panneau de contrôle
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/home" class="nav-link">
+                    <i class="fas fa-car"></i>
+                      <p>
+                    calendar
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/event" class="nav-link">
+                    <i class="fas fa-exclamation-triangle"></i>
+                      <p>
+                    event
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/family" class="nav-link">
+                    <i class="fas fa-shield-alt"></i>
+                      <p>
+                        family
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/categorie" class="nav-link">
+                     <i class="fas fa-sticky-note"></i>
+                      <p>
+                        categorie
+                        <span class="right badge badge-danger">New</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('users.show') }}" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>Informationa</p>
+                    </a>
+                  </li>
+                  @endif
+              @endif
+          @endguest
+              
+              
+             
+              
+              
         
         
-              <li class="nav-item">
-                <a href="{{ route('users.show') }}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-info"></i>
-                  <p>Informational</p>
-                </a>
-              </li>
+              
+              
+              
             </ul>
           </nav>
           <!-- /.sidebar-menu -->

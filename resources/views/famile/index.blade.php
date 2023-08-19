@@ -11,7 +11,7 @@
 </style>
 
 <div class="uper">
-  @if ($user->responsable == 1 && $familes->isEmpty())
+  @if (($user->responsable == 1 && $familes->isEmpty()) || Auth::user()->role==1)
      <a href="{{ route('family.create')}}" class="btn btn-primary">Ajouter famile </a> 
      @endif
   
@@ -23,7 +23,7 @@
           <td>Name  </td>
           <td>Telephone  </td>
           <td>Email </td>
-          <td colspan="2">opperation</td>
+          <td colspan="3">opperation</td>
         </tr>
     </thead>
 
@@ -40,11 +40,20 @@
             <td>{{$item->Name_famile}}</td>
             <td>{{$item->Tell_fixe}}</td>
             <td>{{$item->Email_famile}}</td>
-
-            <td><a href="{{ route('family.edit', $item->id)}}" class="btn btn-primary">Modifier</a></td>
+            @if ( auth()->user()->responsable == 1   || Auth::user()->role==1 )
+            <td><a href="{{ route('family.edit', $item->id)}}" class="btn btn-info">Modifier</a></td>
+           @endif
+            <td><a href="{{ route('family.show', $item->id)}}" class="btn btn-warning">voir</a></td>
+            @if ( auth()->user()->role == 1  ) 
            
-            <td><a href="{{ route('family.show', $item->id)}}" class="btn btn-primary">voir</a></td>
-            
+            <td>
+                <form   action="{{ route('family.destroy', $item->id)}}"method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
+            </td>
+            @endif
         </tr>
        
      

@@ -16,9 +16,12 @@ class EventController extends Controller
      */
     public function index()
     {
-        $id=Auth::user()->id;
-        $event = event::where('user_id',$id)->get();
-       
+        if(Auth::user()->role==1){
+            $event = event::all();
+        }else{
+    $id=Auth::user()->id;
+    $event = event::where('user_id', $id)->get();
+}
        // $cours = Cour::where('user_id',Auth::user()->id)->get();
       //  $cours = $filier->Cours();
         return view('event.index', compact('event'));

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -15,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+    $users = User::where('role', '!=', 1)->get();
+    return view('users.index', compact('users'));
+
     }
 
     /**
@@ -25,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');   
     }
 
     /**
@@ -36,7 +39,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usere = new   User;
+        $usere->name = $request->input('name');
+        $usere->email = $request->input('email');
+        $usere->prenom = $request->input('prenom');
+        $usere->nationalite = $request->input('nationalite');
+        $usere->date_naissance = $request->input('date_naissance');
+        $usere->sex = $request->input('sex');
+           if ($request->hasFile('image_user')) {
+            $path = $request->image_user->store('profile_pictures', 'public');
+           $usere->image_user=$path;
+        }
+        $usere->CIN = $request->input('CIN');
+        $usere->responsable = $request->input('responsable');
+        $password = $request->input('password');
+        $hashedPassword = Hash::make($password);
+        $usere->password = $hashedPassword ; 
+        $usere->save();
+    
+            return redirect()->route('event.index')->with('status','event updated Successfully');
     }
 
     /**
@@ -45,8 +66,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+
+     public function show($id)
     {
+        
+        $usere = User::findOrFail($id);
+    
+     
+        return view('users.detail', compact('usere'));
+        
+    }
+    public function show_user()
+    {
+        
         $usere = Auth::user();
 
         // Passez les données de l'utilisateur à la vue
@@ -71,7 +103,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+      
+
+        return view('users.edit' , compact('user'));
     }
 
     /**
@@ -83,7 +118,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    $usere = User::find($id);
+    $usere->name = $request->input('name');
+    $usere->email = $request->input('email');
+    $usere->prenom = $request->input('prenom');
+    $usere->nationalite = $request->input('nationalite');
+    $usere->date_naissance = $request->input('date_naissance');
+    $usere->sex = $request->input('sex');
+       if ($request->hasFile('image_user')) {
+        $path = $request->image_user->store('profile_pictures', 'public');
+       $usere->image_user=$path;
+    }
+    $usere->CIN = $request->input('CIN');
+    $usere->responsable = $request->input('responsable');
+    $password = $request->input('password');
+    $hashedPassword = Hash::make($password);
+    $usere->password = $hashedPassword ; 
+    $usere->update();
+
+        return redirect()->route('event.index')->with('status','event updated Successfully');
     }
 
     /**
@@ -94,6 +147,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back()->with('status','user Deleted Successfully');
     }
 }
