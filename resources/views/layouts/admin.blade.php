@@ -48,9 +48,7 @@
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="/home"  class="nav-link">Home</a>
-          </li>
+         
           @guest
   
                 <!-- Code pour les utilisateurs invités -->
@@ -64,9 +62,15 @@
                     @if ( $currentUser && $currentUser->role == 1)
                     
                     <li class="nav-item d-none d-sm-inline-block">
+                      <a href="{{ route('admin.index')}}"  class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
                       <a href="/contact" class="nav-link">Contact</a>
                     </li>
                     @else 
+                    <li class="nav-item d-none d-sm-inline-block">
+                      <a href="/home"  class="nav-link">Home</a>
+                    </li>
                     <li class="nav-item" >
                      <a class="nav-link"  href="{{ route('users.show') }}">profile</a>
                     </li>
@@ -105,7 +109,7 @@
       </nav>
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/home" class="brand-link">
+        <a href="#" class="brand-link">
           <img src="assets\images\event_logo1.png" alt="Full Call Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">G_event</span>
         </a>
@@ -127,6 +131,14 @@
                     @endphp
 
                   @if ( $currentUser && $currentUser->role == 1)
+                  <li class="nav-item">
+                    <a href="{{ route('admin.index')}}" class="nav-link active">
+                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <p>
+                      Panneau de contrôle
+                      </p>
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a href="/user" class="nav-link">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -166,7 +178,13 @@
                   <li class="nav-item">
                     <a href="{{ route('users.show') }}" class="nav-link">
                       <i class="nav-icon far fa-circle text-info"></i>
-                      <p>information de site </p>
+                      <p>information de compte admin </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('information.index') }}" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>information de site  </p>
                     </a>
                   </li>
                   @else 

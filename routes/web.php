@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\InformationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::resource('family', FamilyController::class);
 Route::resource('event', EventController::class);
 
+Route::get('/information', [App\Http\Controllers\InformationController::class, 'index'])->name('information.index');
+Route::post('/information/modifier',  [App\Http\Controllers\InformationController::class, 'update_information'])->name('information.update');
+
 Route::resource('categorie', CategorieController::class);
 Route::post('/family/{id}/addUser',  [App\Http\Controllers\FamilyController::class, 'addUser'])->name('family.addUser');
 Route::post('/family/{familyId}/removeUser/{userId}', [App\Http\Controllers\FamilyController::class, 'removeUser'])->name('family.removeUser');
@@ -35,6 +39,10 @@ Route::resource('contact', ContactController::class);
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+
+
 Route::resource('user', UserController::class);
 Auth::routes();
 Route::get('/users/show', [App\Http\Controllers\UserController::class, 'show_user'])->name('users.show');
