@@ -22,7 +22,8 @@ class InformationController extends Controller
             $siteInformation->telephone = '060000000';
             $siteInformation->address = 'maroc , marrakech , ru 19';
             $siteInformation->email = 'admin_page@fullcalendar.com';
-            $siteInformation->description = 'test de description';
+            $siteInformation->description = 'Family Calendar est un calendrier interactif partagé conçu pour les familles. Organisez facilement vos emplois du temps, partagez des événements et restez synchronisés en un seul 
+            endroit pratique. Simplifiez la coordination familiale pour des moments inoubliables ensemble.';
             $siteInformation->save();
         }
 

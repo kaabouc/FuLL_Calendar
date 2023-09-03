@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\InformationController;
+use App\Models\information_site;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +38,18 @@ Route::get('/family/{familyId}/invitations', [App\Http\Controllers\FamilyControl
 
 Route::resource('contact', ContactController::class);
 Route::get('/', function () {
-    return view('welcome');
+    $siteInformation = information_site::first();
+
+    if (!$siteInformation) {
+        $siteInformation = new information_site();
+        $siteInformation->telephone = '060000000';
+        $siteInformation->address = 'maroc , marrakech , ru 19';
+        $siteInformation->email = 'admin_page@fullcalendar.com';
+        $siteInformation->description = 'Family Calendar est un calendrier interactif partagé conçu pour les familles. Organisez facilement vos emplois du temps, partagez des événements et restez synchronisés en un seul 
+        endroit pratique. Simplifiez la coordination familiale pour des moments inoubliables ensemble.';
+        $siteInformation->save();
+    }
+    return view('welcome',compact('siteInformation'));
 });
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');

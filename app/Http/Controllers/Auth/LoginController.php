@@ -32,9 +32,9 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
             {
                 if (Auth::user()->role==1) {
-                    return redirect('/contact');
+                    return redirect('/admin');
                 } else {
-                    return redirect('/');
+                    return redirect('/home');
                 }
             }
 

@@ -80,8 +80,12 @@
                             <label for="sex" class="col-md-4 col-form-label text-md-end">{{ __('SEX') }}</label>
 
                             <div class="col-md-6">
-                                <input id="sex" type="text" class="form-control @error('sex') is-invalid @enderror" name="sex" value="{{ old('sex') }}" required autocomplete="sex" autofocus>
-
+                                
+                                <select id="inputState" class="form-control" name="sex" required autocomplete="sex">
+                                    <option selected> homme </option>
+                                    <option> femme </option>
+                                  
+                                </select>
                                 @error('sex')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

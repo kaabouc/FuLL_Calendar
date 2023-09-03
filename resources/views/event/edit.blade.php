@@ -31,28 +31,28 @@
                 <input type="hidden" name="id" value="">
                     <div class="form-group mb-2">
                         <label for="title" class="control-label">Title</label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" value="{{ $event->title }}" required>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" value="{{ $event->title }}" >
                     </div>
                     <div class="form-group mb-2">
                         <label for="description" class="control-label">Description</label>
-                        <textarea rows="3" class="form-control form-control-sm rounded-0" name="description_event" id="description_event" value="{{ $event->description_event}}" required>{{ $event->description_event}}</textarea>
+                        <textarea rows="3" class="form-control form-control-sm rounded-0" name="description_event" id="description_event" value="{{ $event->description_event}}" >{{ $event->description_event}}</textarea>
                     </div>
                    
                     <div class="form-group mb-2">
                         <label for="start_datetime" class="control-label">Start</label>
-                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" value="{{ $event->start_datetime}}"  required>
+                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" value="{{ $event->start_datetime}}"  >
                     </div>
                     <div class="form-group mb-2">
                         <label for="end_datetime" class="control-label">End</label>
-                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime"  value="{{ $event->end_datetime}}" required>
+                        <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime"  value="{{ $event->end_datetime}}" >
                     </div>
                     <div class="form-group mb-2">
                       <label for="color" class="control-label">color</label>
-                      <input type="color" class="form-control form-control-sm rounded-0" name="color" id="color"  value="{{ $event->color}}" required>
+                      <input type="color" class="form-control form-control-sm rounded-0" name="color" id="color"  value="{{ $event->color}}" >
                   </div>
                     <div class="form-group mb-2">
                       <label for="categorie">Catégorie:</label>
-                      <select name="categorie_id" required>
+                      <select name="categorie_id" >
                           @foreach ($categories as $categorie)
                               <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
                           @endforeach

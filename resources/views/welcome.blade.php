@@ -52,8 +52,8 @@ https://templatemo.com/tm-568-digimedia
       <div class="row">
         <div class="col-lg-8 col-sm-8 col-7">
           <ul class="info">
-            <li><a href="#"><i class="fa fa-envelope"></i>admin_page@company.com</a></li>
-            <li><a href="#"><i class="fa fa-phone"></i>060001020304</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>{{ $siteInformation->email}}</a></li>
+            <li><a href="#"><i class="fa fa-phone"></i>{{ $siteInformation->telephone}}</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-sm-4 col-5">
@@ -91,7 +91,7 @@ https://templatemo.com/tm-568-digimedia
                       @auth
                       <li class="scroll-to-section"><div class="border-first-button"><a  href="{{ url('/home') }}" > home  </a></div></li> 
                     @else
-                          <li class="scroll-to-section"><div class="border-first-button"  ><a  href="{{ route('login') }}"> login  </a></div></li> 
+                          <li class="scroll-to-section"><div class="scroll-to-section"  ><a  href="{{ route('login') }}"> login  </a></div></li> 
                         @if (Route::has('register'))
                           <li class="scroll-to-section"><div class="border-first-button"><a  href="{{ route('register') }}"> registre  </a></div></li> 
                         @endif
@@ -120,7 +120,9 @@ https://templatemo.com/tm-568-digimedia
                   <div class="col-lg-12">
                     <h6>family calendar </h6>
                     <h2>We Boost Your Website Traffic</h2>
-                    <p>TFamily Calendar est un calendrier interactif partagé conçu pour les familles. Organisez facilement vos emplois du temps, partagez des événements et restez synchronisés en un seul endroit pratique. Simplifiez la coordination familiale pour des moments inoubliables ensemble.</p>
+                    <p>
+                      {{ $siteInformation->description}}
+                    </p>
                   </div>
                   <div class="col-lg-12">
                     <div class="border-first-button scroll-to-section">
@@ -175,7 +177,7 @@ https://templatemo.com/tm-568-digimedia
                         <div class="progress-value">
                           <div>
                             90%<br>
-                            <span>Coding</span>
+                            <span> event </span>
                           </div>
                         </div>
                       </div>
@@ -193,7 +195,7 @@ https://templatemo.com/tm-568-digimedia
                         <div class="progress-value">
                           <div>
                             80%<br>
-                            <span>Photoshop</span>
+                            <span>task</span>
                           </div>
                         </div>
                       </div>
@@ -211,7 +213,7 @@ https://templatemo.com/tm-568-digimedia
                         <div class="progress-value">
                           <div>
                             80%<br>
-                            <span>Animation</span>
+                            <span> famile </span>
                           </div>
                         </div>
                       </div>
@@ -409,7 +411,7 @@ https://templatemo.com/tm-568-digimedia
               </div>
               <div class="col-lg-5">
                 <div id="map">
-                  <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="636px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <iframe src="https://www.google.com/maps/embed?origin=!3m1!4b1!4m6!3m5!1s0xd97722d17f53703:0x2ccfcd3c5114041!8m2!3d31.2738868!4d-4.2729199!16s%2Fg%2F1hjhgr3rd?entry=ttu" width="100%" height="636px" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-lg-7">
@@ -419,7 +421,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/phone-icon.png" alt="">
-                          <a href="#">060001020304</a>
+                          <a href="#">{{ $siteInformation->telephone}}</a>
                         </div>
                       </div>
                     </div>
@@ -427,7 +429,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/email-icon.png" alt="">
-                          <a href="#">Admin_page@email.com</a>
+                          <a href="#">{{ $siteInformation->email}}</a>
                         </div>
                       </div>
                     </div>
@@ -435,7 +437,7 @@ https://templatemo.com/tm-568-digimedia
                       <div class="info-post">
                         <div class="icon">
                           <img src="assets/images/location-icon.png" alt="">
-                          <a href="#">Maroc, marrakech, rue 100</a>
+                          <a href="#">{{ $siteInformation->address}}</a>
                         </div>
                       </div>
                     </div>

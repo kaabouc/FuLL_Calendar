@@ -31,25 +31,25 @@
                 <input type="hidden" name="id" value="">
                     <div class="form-group mb-2">
                         <label for="Name_famile" class="control-label">Name de famile </label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="Name_famile" id="Name_famile" value="{{ $famile->Name_famile }}" required>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="Name_famile" id="Name_famile" value="{{ $famile->Name_famile }}" >
                     </div>
                     <div class="form-group mb-2">
                         <label for="Tell_fixe" class="control-label">Telephone de famile </label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="Tell_fixe" id="Tell_fixe" value="{{ $famile->Tell_fixe }}" required>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="Tell_fixe" id="Tell_fixe" value="{{ $famile->Tell_fixe }}" >
                     </div>
                    
                     <div class="form-group mb-2">
                         <label for="Email_famile" class="control-label">Email de famile </label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="Email_famile" id="Email_famile" value="{{ $famile->Email_famile }}" required>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="Email_famile" id="Email_famile" value="{{ $famile->Email_famile }}" >
                     </div>
                     <div class="form-group mb-2">
                         <label for="Adress_famile" class="control-label">Adress de family</label>
-                        <input type="text" class="form-control form-control-sm rounded-0" name="Adress_famile" id="Adress_famile" value="{{ $famile->Adress_famile }}" required>
+                        <input type="text" class="form-control form-control-sm rounded-0" name="Adress_famile" id="Adress_famile" value="{{ $famile->Adress_famile }}" >
                     </div>
                     
                     <div class="form-group mb-2">
                         <label for="Image_famile" class="control-label">Image de family</label>
-                        <input type="file" class="form-control form-control-sm rounded-0" name="Image_famile" id="Image_famile" value="{{ $famile->Image_famile }}" required>
+                        <input type="file" class="form-control form-control-sm rounded-0" name="Image_famile" id="Image_famile" value="{{ $famile->Image_famile }}" >
                     </div>
                 </form>
             

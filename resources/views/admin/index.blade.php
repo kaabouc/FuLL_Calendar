@@ -10,7 +10,7 @@
               <div class="inner">
                 <h3> {{ $nbr_categories }} </h3>
  
-                <p>categorie </p>
+                <p>Categories </p>
               </div>
               <div class="icon">
               <i class="fas fa-exclamation-triangle"></i>
@@ -27,10 +27,10 @@
                 {{ $nbr_users }}
                 </h3>
 
-                <p>user</p>
+                <p>Users</p>
               </div>
               <div class="icon">
-              <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-user"></i>
               </div>
               <a href="{{ route('user.index')}}" class="small-box-footer">EN SAVOIR PLUS <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -42,10 +42,10 @@
               <div class="inner">
                 <h3>{{ $nbr_familes }}</h3>
 
-                <p>famile </p>
+                <p> Familes </p>
               </div>
               <div class="icon">
-               <i class="fas fa-car"></i>
+                <i class="fas fa-users"></i>
               </div>
               <a href="{{ route('family.index')}}" class="small-box-footer">EN SAVOIR PLUS <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -57,11 +57,10 @@
               <div class="inner">
                 <h3>{{ $nbr_contacts }} </h3>
 
-                <p>contact</p>
+                <p>Contacts</p>
               </div>
               <div class="icon">
-              <i class="fas fa-sticky-note"></i>
-
+                <i class="fas fa-envelope"></i>
               </div>
               <a href="{{ route('contact.index')}}" class="small-box-footer">EN SAVOIR PLUS <i class="fas fa-arrow-circle-right"></i></a>
             </div>

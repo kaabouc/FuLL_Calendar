@@ -16,7 +16,7 @@
                             <div class="col-md-8">
                                 <p><strong>Nom de messagrie  :</strong> {{ $contacte->Name }}</p>
                                 <p><strong>Email :</strong> {{ $contacte->Email }}</p>
-                                <p><strong>suject  :</strong> {{ $contacte->Suject }}</p>
+                                <p><strong>suject  :</strong> {{ $contacte->Subject }}</p>
                                 <p><strong>Message  :</strong> {{ $contacte->Message }}</p>
                                 
                                 <!-- Ajoutez d'autres informations de l'utilisateur ici -->

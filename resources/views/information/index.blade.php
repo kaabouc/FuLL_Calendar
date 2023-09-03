@@ -34,7 +34,7 @@
     
   
    
-    <button type="submit" class="btn btn-primary" name="update">Modifier   </button>
+    <button type="submit" class="c" name="update">Modifier   </button>
     </form>
 
     @endsection

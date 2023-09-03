@@ -133,7 +133,7 @@
                   @if ( $currentUser && $currentUser->role == 1)
                   <li class="nav-item">
                     <a href="{{ route('admin.index')}}" class="nav-link active">
-                      <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <i class="bi bi-calendar-event"></i>
                       <p>
                       Panneau de contrôle
                       </p>
@@ -141,7 +141,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="/user" class="nav-link">
-                    <i class="fas fa-exclamation-triangle"></i>
+                      <i class="fas fa-user"></i>
                       <p>
                        users
                         <span class="right badge badge-danger">New</span>
@@ -150,7 +150,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="/event" class="nav-link">
-                    <i class="fas fa-exclamation-triangle"></i>
+                      <i class="fas fa-calendar-alt"></i>
                       <p>
                     event
                         <span class="right badge badge-danger">New</span>
@@ -168,9 +168,11 @@
                   </li>
                   <li class="nav-item">
                     <a href="/family" class="nav-link">
-                    <i class="fas fa-shield-alt"></i>
+                     
+                        <i class="fas fa-users"></i>
+                      
                       <p>
-                        family
+                         Families
                         <span class="right badge badge-danger">New</span>
                       </p>
                     </a>
@@ -198,7 +200,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="/home" class="nav-link">
-                    <i class="fas fa-car"></i>
+                      <i class="fas fa-calendar"></i>
                       <p>
                     calendar
                         <span class="right badge badge-danger">New</span>
@@ -207,7 +209,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="/event" class="nav-link">
-                    <i class="fas fa-exclamation-triangle"></i>
+                      <i class="fas fa-calendar-alt"></i>
                       <p>
                     event
                         <span class="right badge badge-danger">New</span>
@@ -216,7 +218,9 @@
                   </li>
                   <li class="nav-item">
                     <a href="/family" class="nav-link">
-                    <i class="fas fa-shield-alt"></i>
+                      
+                        <i class="fas fa-users"></i>
+                      
                       <p>
                         family
                         <span class="right badge badge-danger">New</span>
